@@ -1,1 +1,55 @@
+#ლუწი რიცხვები
+number = 0
+while number <= 50:
+    if number % 2 == 0:
+        print(number)
+    number += 2
 
+#ჯამი 1-დან N-მდე
+total = 0
+i = 1
+N = int(input('please enter number: '))
+while i <= N:
+    total += i
+    i += 1
+    print(total)
+
+# ფაქტორიალი
+i = 1
+result = 1
+n = int(input("please enter n: "))
+while i <= n:
+    result *= i
+    i += 1
+    print (result)
+    print(f"{n}! = {result}")
+
+#საშუალო არითმეტიკული
+count = 0
+total = 0
+number = int(input("please enter a number: "))
+while number != 0:
+    count += 1
+    total += number
+    number = int(input("please enter a number: "))
+print("count:", count)
+print("sum:", total)
+if count > 0:
+    print("average:", total / count)
+else:
+    print("no numbers were entered")
+
+#გამოცნობის თამაში
+secret = 27
+n = 1
+while n <= 5:
+    count = int(input('enter your age: '))
+    if count >28:
+        print('too high')
+    elif count < 27:
+        print('too low')
+    else:
+        print('you win')
+    n += 1
+    if n > 5:
+        print('you lose! The number was 27')
