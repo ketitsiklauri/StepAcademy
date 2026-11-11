@@ -1,0 +1,50 @@
+#ინდექსები და Slicing
+word = 'programming'
+
+print(word[0])
+print(word[-1])
+print(word[-3])
+print(word[:4])
+print(word[-4:])
+print(word[::2])
+print(word[::-1])
+
+#ელფოსტის დაშლა
+email = input("შეიყვანეთ ელფოსტა: ")
+
+username, domain = email.split("@")
+
+domain_first = domain.split(".")[0]
+
+print(username)
+print(domain)
+print(domain_first)
+
+#ტელეფონის ნომრის გასუფთავება
+phone = input("Enter phone: ")
+
+clean_phone = phone.replace(" ", "").replace("-", "")
+
+print(clean_phone)
+
+
+#URL-მისამართის (slug) გენერატორი
+title = input("Enter title: ")
+
+slug = title.strip().lower().replace(" ", "-")
+
+print(slug)
+
+#სტუდენტის ბარათი (f-string)
+
+name = input("Enter name: ")
+age = input("Enter age: ")
+city = input("Enter city: ")
+language = input("Enter favorite language: ")
+
+print("=========================")
+print(f"Name: {name.title()}")
+print(f"Age: {age}")
+print(f"City: {city.title()}")
+print(f"Favorite language: {language.upper()}")
+print("=========================")

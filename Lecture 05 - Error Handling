@@ -1,0 +1,41 @@
+# კინოთეატრი (and)
+age = int(input("Enter your age: "))
+money = int(input("Enter your money: "))
+ticket_price = 15
+
+if age >= 12 and money >= 15:
+      print("Enjoy the movie")
+else:
+    print("Access denied")
+
+#ნაკიანი წელი
+leap_year = int(input("Enter a year: "))
+
+if (leap_year % 4 == 0 and leap_year % 100 != 0) or (leap_year % 400 == 0):
+    print(f"{leap_year} leap year")
+else:
+    print(f"{leap_year} not a leap year")
+
+#ბანკომატი (ჩადგმული if)
+atm_pin = int(input('please, enter your pin: '))
+cash_ammount = int(input('please, enter cash amount: '))
+if atm_pin == 1234:
+   print('Wrong PIN')
+   if cash_ammount <= 0:
+        print('you can withdraw cash')
+else:
+   print('you have no enough money')
+
+#შეცდომების დამუშავება (ValueError, ZeroDivisionError, TypeError)
+name = input('Enter name: ')
+age = int(input('Enter age: '))
+number = int(input('Enter a number to divide 100 by: '))
+try:
+    print('100 /', number, '=', 100 / number)
+    print('Hello, ' + name + '! Next year you will be ' + str(age + 1) + ' years old.')
+except ZeroDivisionError:
+    print('Cannot divide by zero')
+except ValueError as e:
+    print('Invalid input:', e)
+except Exception as e:
+    print('An error occurred:', e)
