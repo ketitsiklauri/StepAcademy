@@ -1,0 +1,60 @@
+
+#საყიდლების სია (დამატება და წაშლა)
+
+shopping = ['milk', 'bread', 'eggs']
+print(shopping)
+
+shopping.append('cheese')
+print(shopping)
+
+shopping.insert(0, 'apples')
+print(shopping)
+shopping[-1] = 'butter'
+print(shopping)
+
+shopping.extend(['tea', 'coffee'])
+print(shopping)
+
+shopping.remove('bread')
+print(shopping)
+
+removed = shopping.pop(1)
+print("Removed:", removed)
+print(shopping)
+
+ #ჩადგმული სია (მატრიცა)
+
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+print("Rows:", len(matrix))
+print("Last row:", matrix[-1])
+
+print("6 (positive):", matrix[1][2])
+print("6 (negative):", matrix[-2][-1])
+
+print("7:", matrix[-1][0])
+
+matrix[1][1] = 50
+print(matrix)
+
+
+#სიის შევსება (while)
+
+numbers = []
+
+while True:
+    user_input = input("enter a number: ")
+
+    if user_input == "stop":
+        break
+
+    numbers.append(int(user_input))
+
+print("list:", numbers)
+print("count:", len(numbers))
+
+if numbers:
+    print(f"first: {numbers[0]}, last: {numbers[-1]}")
+    print("descending:", sorted(numbers, reverse=True))
+else:
+    print("The list is empty")
