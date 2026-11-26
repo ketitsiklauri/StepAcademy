@@ -1,0 +1,87 @@
+#ამოცანა 1. ბილეთების ბეჭდვა (DRY და პარამეტრები)
+
+def print_ticket(passenger, destination, travel_class='Economy'):
+    print('--- TICKET ---')
+    print(f'Passenger: {passenger}')
+    print(f'Destination: {destination}')
+    print(f'Class: {travel_class}')
+    print()
+
+print_ticket('Nika', 'Batumi', 'Economy')
+
+print_ticket(passenger='Mari', destination='Kutaisi', travel_class='Business')
+
+print_ticket('Luka', 'Batumi', travel_class='Economy')
+
+#ამოცანა 2. ტემპერატურა (return და default პარამეტრი)
+def celsius_to_fahrenheit(celsius):
+    return celsius * 9 / 5 + 32
+
+def is_warm(celsius, limit=20):
+    return celsius > limit
+
+f1 = celsius_to_fahrenheit(0)
+f2 = celsius_to_fahrenheit(37)
+f3 = celsius_to_fahrenheit(100)
+
+print(f"0C = {f1}F")
+print(f"37C = {f2}F")
+print(f"100C = {f3}F")
+
+print(is_warm(25))       
+print(is_warm(25, 30))                    
+print(is_warm(limit=10, celsius=15))
+
+#ამოცანა 3. რიცხვების ანალიზი (რამდენიმე მნიშვნელობის დაბრუნება)
+
+def analyze_numbers(numbers):
+    minimum = min(numbers)
+    maximum = max(numbers)
+    average = sum(numbers) / len(numbers)
+    return minimum, maximum, average
+
+data = [12, 7, 25, 3, 18]
+
+minimum, maximum, average = analyze_numbers(data)
+
+print(f"Min: {minimum}, Max: {maximum}, Average: {average}")
+
+result = analyze_numbers(data)
+print(result)
+
+#ამოცანა 4. ჯგუფის სია (ცვალებადი default მნიშვნელობა)
+
+def add_student(name, group=None):
+    if group is None:
+        group = []
+    if name not in group:
+        group.append(name)
+    return group
+
+group_a = add_student('Ana')
+group_b = add_student('Nika')
+group_a = add_student('Mari', group_a)
+group_a = add_student('Ana', group_a)
+
+print(group_a)
+print(group_b)
+
+print(group_a is group_b)
+print(group_a == ['Ana', 'Mari'] and group_b == ['Nika'])
+
+#5ამოცანა 5. პაროლის სიძლიერე (რამდენიმე return)
+def check_password(password):
+    if len(password) < 6:
+        return 'too short'
+    if password.isdigit():
+        return 'weak'
+    has_digit = any(ch.isdigit() for ch in password)
+    has_letter = any(ch.isalpha() for ch in password)
+    if not has_digit or not has_letter:
+        return 'medium'
+    return 'strong'
+
+passwords = ['abc', '1234567', 'qwerty', 'python3', 'Tbilisi2024']
+
+for password in passwords:
+    print(f"{password} -> {check_password(password)}")
