@@ -1,0 +1,79 @@
+#ამოცანა 1. დუბლიკატების მოშორება
+
+numbers = [4, 8, 15, 8, 16, 23, 4, 42, 15, 8]
+unique_set = set(numbers)
+unique_list = list(unique_set)
+
+print("unique elements:", unique_list)
+print("number of unique elements:", len(unique_set))
+print("23 is in the unique elements:", 23 in unique_set)
+
+#ამოცანა 2. სეტების ოპერაციები
+ana = {'python', 'java', 'c', 'sql'}
+nika = {'python', 'javascript', 'sql', 'go'}
+
+print("operator:", ana | nika)
+print("method:", ana.union(nika))
+
+print("operator:", ana & nika)
+print("method:", ana.intersection(nika))
+
+print("operator:", ana - nika)
+print("method:", ana.difference(nika))
+
+#ამოცანა 3. კენჭისყრა
+
+votes = ['Ana', 'Nika', 'Ana', 'Mari', 'Nika', 'Ana', 'Mari', 'Ana']
+
+counts = {}
+for name in votes:
+    if name in counts:
+        counts[name] += 1
+    else:
+        counts[name] = 1
+        
+for name, count in counts.items():
+    print(f"{name}: {count}")
+
+#ამოცანა 4. მაღაზიის მარაგი
+
+inventory = {
+    'laptop': {'price': 2500, 'quantity': 5},
+    'mouse': {'price': 40, 'quantity': 0},
+    'keyboard': {'price': 120, 'quantity': 12},
+    'monitor': {'price': 800, 'quantity': 0},
+}
+
+total_value = 0
+for i in inventory.values():
+    total_value += i['price'] * i['quantity']
+print("მარაგის საერთო ღირებულება:", total_value)
+
+print("ამოწურული პროდუქტები:")
+for name, i in inventory.items():
+    if i['quantity'] == 0:
+        print(name)
+
+product = input("შეიყვანეთ პროდუქტის სახელი: ")
+amount = int(input("შეიყვანეთ რაოდენობა: "))
+
+if product not in inventory:
+    print("პროდუქტი ვერ მოიძებნა")
+elif inventory[product]['quantity'] < amount:
+    print("მარაგი არასაკმარისია")
+else:
+    inventory[product]['quantity'] -= amount
+    cost = inventory[product]['price'] * amount
+    print(f"შეძენის ღირებულება: {cost}")
+
+#ამოცანა 5. Comprehension-ები
+words = ['python', 'java', 'ai', 'sql', 'go', 'python']
+
+squares = [n ** 2 for n in range(1, 11)]
+print(squares)
+
+lengths = {word: len(word) for word in words}
+print(lengths)
+
+first_letters = {word[0] for word in words}
+print(first_letters)
